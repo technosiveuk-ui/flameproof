@@ -1,0 +1,5 @@
+# robots.txt — Flame Proof (https://flameproof.in)
+User-agent: *
+Allow: /
+
+Sitemap: https://flameproof.in/sitemap.xml

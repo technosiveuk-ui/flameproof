@@ -11,7 +11,9 @@ A dependency-free, single-page static site — plain HTML, CSS, and vanilla JS. 
 | `index.html` | Markup + structured data (JSON-LD) |
 | `styles.css` | All styling, dark/light themes, responsive layout |
 | `script.js` | Theme toggle, mobile menu, nav shrink, scroll reveal, contact-form validation + WhatsApp compose |
-| `images/` | Hero background & About section imagery |
+| `images/` | Hero background (WebP), About photo (WebP+PNG), 1200×630 social image |
+| `robots.txt` | Crawl rules for search engines |
+| `sitemap.xml` | Sitemap for search engines |
 
 ## Run locally
 
@@ -32,11 +34,10 @@ python3 -m http.server 8000
 
 ## Before going live
 
-Replace the placeholder details across `index.html`, `script.js`, and the JSON-LD:
+Phone/WhatsApp is set to `+91 90820 96962`. Still confirm/replace across `index.html` and the JSON-LD:
 
-- Phone / WhatsApp (`919082096962`)
-- Email (`info@flameproof.com`)
-- Address & geo coordinates
-- Social profile URLs
+- Email (`info@flameproof.in`) — confirm the mailbox
+- Street address (`streetAddress` is a placeholder; locality is set to Mumbai, Maharashtra)
+- Social profile URLs (`facebook.com/flameproof`, `instagram.com/flameproof`, etc. are placeholders)
 
-The Open Graph / Twitter image tags already point at the absolute deploy URL (`https://www.flameproof.com/images/hero-bg.png`) — update the domain to match where you host it.
+The canonical URL, Open Graph / Twitter tags, and JSON-LD all use `https://flameproof.in`, and the social share image is `https://flameproof.in/images/og-image.png` (1200×630). Point the `flameproof.in` domain at your host (e.g. GitHub Pages custom domain) so those URLs resolve — `robots.txt` and `sitemap.xml` at the site root advertise the sitemap to search engines.
