@@ -40,7 +40,7 @@
   --footer-bg: #1a1a1a;
   --toggle-bg: #e8e8e8;
 }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 body {
   font-family: 'Inter', sans-serif;
   background: var(--bg);
@@ -148,6 +148,7 @@ nav.shrink { padding: 10px 6%; }
 /* HERO */
 .hero {
   min-height: 100vh;
+  min-height: 100svh;
   position: relative;
   display: flex; align-items: center;
   padding: 120px 6% 60px;
@@ -276,7 +277,7 @@ section { padding: 100px 6%; position: relative; transition: background-color 0.
   background: linear-gradient(135deg, transparent 50%, rgba(255,87,34,0.3));
   z-index: 1;
 }
-.about-text h2 { font-size: 2.4rem; margin-bottom: 20px; }
+.about-text h2 { font-size: clamp(1.8rem, 4.5vw, 2.4rem); margin-bottom: 20px; }
 .about-text h2 span {
   background: linear-gradient(135deg, var(--fire-3), var(--fire));
   -webkit-background-clip: text;
@@ -298,7 +299,7 @@ section { padding: 100px 6%; position: relative; transition: background-color 0.
 
 /* SERVICES */
 .services-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
   gap: 24px; max-width: 1300px; margin: 0 auto;
 }
 .service-card {
@@ -350,7 +351,7 @@ section { padding: 100px 6%; position: relative; transition: background-color 0.
 /* WHY US */
 .why-us { background: var(--bg-2); }
 .why-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
   gap: 24px; max-width: 1200px; margin: 0 auto;
 }
 .why-card {
@@ -452,7 +453,7 @@ section { padding: 100px 6%; position: relative; transition: background-color 0.
   display: grid; grid-template-columns: 1fr 1fr; gap: 50px;
   max-width: 1200px; margin: 0 auto;
 }
-.contact-info h3 { font-size: 1.8rem; margin-bottom: 16px; font-family: 'Inter', sans-serif; }
+.contact-info h3 { font-size: clamp(1.4rem, 4vw, 1.8rem); margin-bottom: 16px; font-family: 'Inter', sans-serif; }
 .contact-info > p { color: var(--muted); margin-bottom: 32px; }
 .contact-item {
   display: flex; align-items: flex-start; gap: 16px;
@@ -625,12 +626,40 @@ footer {
   .hero-stats { gap: 24px; }
   section { padding: 70px 6%; }
 }
-@media (max-width: 500px) {
-  .footer-grid { grid-template-columns: 1fr; }
+
+@media (max-width: 600px) {
+  /* Hero stats: tidy 2×2 grid instead of a cramped row */
+  .hero-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px 16px; }
+  .stat-num { font-size: 1.85rem; }
+  /* Tighter spacing on phones */
+  section { padding: 56px 5%; }
+  .hero { padding: 110px 5% 50px; }
+  .section-head { margin-bottom: 40px; }
+  .contact-form { padding: 28px 22px; }
+  .service-card, .why-card { padding: 28px 22px; }
+}
+
+@media (max-width: 480px) {
+  .footer-grid { grid-template-columns: 1fr; text-align: center; }
+  .footer-social { justify-content: center; }
   .wa-float { width: 56px; height: 56px; bottom: 20px; right: 20px; font-size: 1.7rem; }
   .wa-tooltip { display: none; }
   .theme-toggle { width: 38px; height: 38px; }
-  .btn { padding: 12px 24px; font-size: 0.95rem; }
+  /* Stack hero / CTA buttons full-width for easier tapping */
+  .hero-buttons { flex-direction: column; align-items: stretch; }
+  .hero-buttons .btn { justify-content: center; }
+  .btn { padding: 12px 22px; font-size: 0.95rem; }
+  .contact-item { gap: 12px; }
+  .contact-item i { width: 40px; height: 40px; font-size: 1.05rem; }
   .faq-item summary { padding: 16px 18px; font-size: 0.98rem; }
   .faq-answer { padding: 0 18px 18px; }
+}
+
+@media (max-width: 360px) {
+  /* Let the headline wrap naturally on the smallest screens to avoid clipping */
+  .hero h1 .highlight { white-space: normal; }
+  section { padding: 48px 4%; }
+  .hero-stats { gap: 18px 10px; }
+  .stat-num { font-size: 1.6rem; }
+  .service-card, .why-card { padding: 24px 18px; }
 }
