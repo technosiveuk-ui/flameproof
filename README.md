@@ -34,7 +34,7 @@ python3 -m http.server 8000
 
 Replace the placeholder details across `index.html`, `script.js`, and the JSON-LD:
 
-- Phone / WhatsApp (`919999999999`)
+- Phone / WhatsApp (`919082096962`)
 - Email (`info@flameproof.com`)
 - Address & geo coordinates
 - Social profile URLs
