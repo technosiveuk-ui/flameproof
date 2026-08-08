@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, follow" />
+<title>Page Not Found | Flame Proof</title>
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: radial-gradient(circle at 30% 20%, #1a0505 0%, #0a0a0a 60%);
+    color: #f5f5f5;
+    display: flex; align-items: center; justify-content: center;
+    min-height: 100vh; min-height: 100svh;
+    text-align: center; padding: 24px;
+    -webkit-text-size-adjust: 100%;
+  }
+  .wrap { max-width: 560px; }
+  .flame {
+    width: 96px; height: 96px; margin: 0 auto 8px;
+    filter: drop-shadow(0 0 18px rgba(255, 87, 34, 0.6));
+  }
+  .code {
+    font-size: clamp(5rem, 22vw, 9rem); font-weight: 900; line-height: 1;
+    background: linear-gradient(135deg, #ffc107, #ff5722, #c62828);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
+  }
+  h1 { font-size: clamp(1.3rem, 4vw, 1.8rem); margin-bottom: 14px; }
+  p { color: #a0a0a0; font-size: 1.05rem; line-height: 1.6; margin-bottom: 28px; }
+  .btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  a.btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 13px 26px; border-radius: 50px;
+    font-weight: 600; font-size: 0.98rem; text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  a.btn:hover { transform: translateY(-2px); }
+  .btn-primary { background: linear-gradient(135deg, #ff5722, #c62828); color: #fff; box-shadow: 0 8px 24px rgba(255,87,34,0.35); }
+  .btn-wa { background: #25D366; color: #fff; box-shadow: 0 8px 24px rgba(37,211,102,0.3); }
+  .btn-ghost { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.3); }
+  .brand {
+    display: inline-flex; align-items: center; gap: 8px;
+    margin-bottom: 24px; font-weight: 900; letter-spacing: 1px; font-size: 1.1rem;
+    background: linear-gradient(135deg, #ffc107, #ff5722, #c62828);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    text-decoration: none;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a href="/" class="brand">
+      <svg class="flame" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#ffc107"/><stop offset=".5" stop-color="#ff5722"/><stop offset="1" stop-color="#c62828"/>
+        </linearGradient></defs>
+        <path fill="url(#g)" d="M50 6c0 0-30 25-30 55a30 30 0 0060 0C80 31 50 6 50 6z"/>
+        <path fill="#fff" opacity="0.85" d="M50 30c0 0-15 16-15 28 0 8 7 15 15 15s15-7 15-15c0-12-15-28-15-28z"/>
+      </svg>
+    </a>
+    <div class="code">404</div>
+    <h1>This page went up in smoke</h1>
+    <p>The page you're looking for doesn't exist or may have been moved. Let's get you back to safety.</p>
+    <div class="btns">
+      <a href="/" class="btn btn-primary">← Back to Home</a>
+      <a href="https://wa.me/919082096962?text=Hi%20Flame%20Proof%2C%20I%20need%20help%20finding%20a%20page." target="_blank" rel="noopener" class="btn btn-wa">Chat on WhatsApp</a>
+      <a href="/#contact" class="btn btn-ghost">Contact Us</a>
+    </div>
+  </div>
+</body>
+</html>
