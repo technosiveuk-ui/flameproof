@@ -37,7 +37,7 @@ python3 -m http.server 8000
 Phone/WhatsApp is set to `+91 90820 96962`. Still confirm/replace across `index.html` and the JSON-LD:
 
 - Email (`info@flameproof.in`) — mailbox not yet active; add MX records
-- Street address — placeholder removed from JSON-LD; add the real address (locality is Mumbai, Maharashtra)
+- Street address — set to D Sector, M1 Line Road Street, Trombay, Cheeta Camp, Mumbai, Maharashtra 400088 (in JSON-LD + contact section; confirm the geo pin if you want it exact)
 - Social profile URLs — placeholder `sameAs` removed from JSON-LD; add real handles (footer links still point to placeholders)
 
 The canonical URL, Open Graph / Twitter tags, and JSON-LD all use `https://flameproof.in`, and the social share image is `https://flameproof.in/images/og-image.png` (1200×630). Point the `flameproof.in` domain at your host (e.g. GitHub Pages custom domain) so those URLs resolve — `robots.txt` and `sitemap.xml` at the site root advertise the sitemap to search engines.
